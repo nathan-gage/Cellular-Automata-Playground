@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import Head from 'next/head';
 // import ControlBar from '../src/ControlBar';
 import RenderCanvas from '../components/Renderer';
+import Renderer from '../components/Renderer3';
 import Settings from '../components/Settings'
 import SettingsContext from '../components/SettingsContext';
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/20/solid';
@@ -26,7 +27,8 @@ const Home = () => {
           <label htmlFor="settings-drawer" className="btn btn-circle absolute top-4 right-4 transition opacity-50 hover:opacity-100 hover:drop-shadow-lg lg:hidden">
             <AdjustmentsHorizontalIcon className='w-6 h-6' />
           </label>
-          <RenderCanvas />
+          {/* <RenderCanvas /> */}
+          <Renderer />
         </div>
         <div className="drawer-side">
           <label htmlFor="settings-drawer" className="drawer-overlay"></label>

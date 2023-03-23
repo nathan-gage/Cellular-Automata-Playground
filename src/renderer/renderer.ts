@@ -102,10 +102,10 @@ class Renderer {
       return this.gl.getShaderInfoLog(fragShader);
     }
     if (this.gl.getShaderInfoLog(vertShader)) {
-      console.error("VERTEX SHADER ERROR:", gl.getShaderInfoLog(vertShader));
+      console.error("VERTEX SHADER ERROR:", this.gl.getShaderInfoLog(vertShader));
     }
     if (this.gl.getProgramInfoLog(shaderProgram)) {
-      console.error("SHADER PROGRAM ERROR:", gl.getProgramInfoLog(shaderProgram));
+      console.error("SHADER PROGRAM ERROR:", this.gl.getProgramInfoLog(shaderProgram));
     }
     let vertexBuffer = this.gl.createBuffer();
 
@@ -148,8 +148,6 @@ class Renderer {
 
   setFragValues(fragSource: string, activationSource = this.activationSource, persistent = this.persistent) {
     fragSource = fragSource.replace("ACTIVATION_FUNCTION", activationSource);
-    let persistentSource = persistent ? Shaders.persistentSource : '';
-    fragSource = fragSource.replace("PERSISTENT_DISPLAY", persistentSource);
     return fragSource;
   }
 
