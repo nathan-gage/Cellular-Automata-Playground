@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	box-sizing: border-box;
+}
+
+pixelated {
+	image-rendering: pixelated;
+	-ms-interpolation-mode: nearest-neighbor;
+}
+
+unpixelated {
+	image-rendering: auto;
+	-ms-interpolation-mode: auto;
+}
+
+renderer {
+  @apply absolute border-none inset-0	z-0
+}
+
+html,
+body,
+#__next {
+	height: 100%;
+	width: 100%;
+}
+
+#__next {
+	overflow: auto;
+}
